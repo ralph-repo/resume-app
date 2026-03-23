@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Page should not scroll */
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  body {
+    background: url('peakpx.jpg') center/cover no-repeat fixed; /* fixed bg */
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        /* the page itself never scrolls */
   }
-  to {
-    transform: rotate(360deg);
+        
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    /* background: linear-gradient(135deg, #0f172a, #1e293b) center/cover no-repeat; */
+    pointer-events: none;
   }
-}
+        
+  .page {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+  }
+        
+  .card-wrap {
+    position: relative; /* so overlay can be absolutely positioned */
+    display: inline-block; /* shrink-to-fit the card width */
+  }
+        
+  /* ----- Card: only this scrolls, scrollbar hidden ----- */
+  .card {
+    width: min(60vw, 820px);
+    height: min(60vh, 680px);
+    overflow: auto; /* scrolling occurs here */
+    scrollbar-width: none; /* Firefox hide */
+    -ms-overflow-style: none; /* IE/Edge legacy hide */
+    overscroll-behavior: contain; /* no scroll chaining */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: saturate(120%) blur(2px);
+    -webkit-backdrop-filter: saturate(120%) blur(2px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 1px 0 rgba(255,255,255,0.2) inset;
+    padding: 2rem;
+    color: #0f172a;
+    line-height: 1.6;
+    margin-bottom: 90px;
+  }
+  .card::-webkit-scrollbar { display: none; } /* Chrome/Safari/Edge */
+        
+  /*Spacer inside the card to create scroll distance for the effect */
+  .hero-spacer {
+    block-size: calc(var(--card-h, 60vh) * 1.2); /* 120% of card height */
+  }
+        
+  /* Overlay that sits over the card, not clipped by it */
+  .hero-overlay {
+    position: absolute;
+    /* Match the card's padding box area; adjust if your padding differs */
+    inset: 0;                         /* stretch over the wrap area */
+    display: grid;
+    place-items: center center;         /* center the title */
+    pointer-events: none;             /* overlay is non-interactive */
+    z-index: 2;                      /* above the card content */
+    overflow: visible;          /* allow big title to render outside */
+  }
+        
+  /* The title we scale (centered) */
+  .hero-overlay-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #0f172a;
+    transform-origin: center center;
+    will-change: transform, opacity;
+    margin-bottom: 90px;
+  }
+        
+  /* ----- Scroll-linked animation (CSS) ----- */
+  @keyframes heroShrinkOut {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      /* Fly upward out of the card view and fade */
+      transform: translateY(-40vh) scale(0.5);
+      opacity: 0;
+    }
+  }
+        
+  /* ----- Content spacing so the next heading reveals naturally after the hero ----- */
+  .content > h1,
+  .content > h2,
+  .content > h3 {
+    margin-top: 0; /* your Heading component will likely handle this */
+  }
+  .content {
+    /* opacity: 0; */
+    will-change: opacity;
+  }
+        
+  h2 {
+    font-family: 'Poppins', 'Inter', 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #12e4d6;                      /* Fill color */
+    -webkit-text-stroke: 2px #43a14be2; /* Blue outline */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+        
+  h3 {
+    font-family: 'Poppins', 'Inter', 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #ffffff;                   /* Fill color */
+    -webkit-text-stroke: 2px #00000090; /* Blue outline */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+        
+  .L2 {
+    color: #020202; /* Fill color */
+    letter-spacing: 0.08em;
+    font-weight: bold;
+  }
+        
+  .skills {
+    background-color: #12e4d6;
+    margin: 1px 1px 1px 1px;
+    border: 2px solid #43a14be2;
+    color: #a59f9f;
+    -webkit-text-stroke: 0.4px #000000; /* Blue outline */
+  }
+        
+  .skills:hover{
+    background-color: #55cac2;
+  }
+        
+  .socialbar, .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    height: 40px;
+        
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+        
+    padding: 0 2rem;
+    z-index: 20;
+        
+    background: rgb(51, 46, 46);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+        
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+        
+  .navbar{
+    top: 0;
+  }
+        
+  .navbarLeft {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #12e4d6;
+  }
+        
+  a {
+    text-decoration: none;  /* removes underline */
+    color: #12e4d6;  /* blue color */
+  }
