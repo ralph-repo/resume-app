@@ -177,12 +177,12 @@ useHeroOverlayZoom({ wrapRef, cardRef, overlayTitleRef, contentRef }, {
 </div>
 <nav className="socialbar">
    <a href="mailto:ritik.rnsr@gmail.com?subject=Hello%20Ritik&body=Hi%20Ritik%2C%0D%0A" target='_blank' rel="noreferrer">
-      📧Mail
+      📧<span className='label'>Mail</span>
       </a>
-   <a href="https://www.linkedin.com/in/ritik-sharma-93b72b17a" target='_blank' rel="noreferrer">🔗in</a>
-   <a href="https://github.com/ralph-repo" target='_blank' rel="noreferrer">💻Git</a>
-   <a href="https://google.com/" target='_blank'rel="noreferrer">📞  8449177192</a>
-   <a href="https://en.wikipedia.org/wiki/Bengaluru" target='_blank' rel="noreferrer">📍Bengaluru, India</a>
+   <a href="https://www.linkedin.com/in/ritik-sharma-93b72b17a" target='_blank' rel="noreferrer">🔗<span className='label'>in</span></a>
+   <a href="https://github.com/ralph-repo" target='_blank' rel="noreferrer">💻<span className='label'>Git</span></a>
+   <a href="https://google.com/" target='_blank'rel="noreferrer">📞  <span className='label'>8449177192</span></a>
+   <a href="https://en.wikipedia.org/wiki/Bengaluru" target='_blank' rel="noreferrer">📍<span className='label'>Bengaluru, India</span></a>
 </nav>
       </div>
    );
