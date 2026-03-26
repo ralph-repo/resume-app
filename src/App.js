@@ -181,7 +181,7 @@ useHeroOverlayZoom({ wrapRef, cardRef, overlayTitleRef, contentRef }, {
       </a>
    <a href="https://www.linkedin.com/in/ritik-sharma-93b72b17a" target='_blank' rel="noreferrer">🔗<span className='label'>in</span></a>
    <a href="https://github.com/ralph-repo" target='_blank' rel="noreferrer">💻<span className='label'>Git</span></a>
-   <a href="https://google.com/" target='_blank'rel="noreferrer">📞  <span className='label'>8449177192</span></a>
+   <a href="tel:+918449177192" aria-label='Call Ritik Sharma' target='_blank'rel="noreferrer">📞  <span className='label'>+918449177192</span></a>
    <a href="https://en.wikipedia.org/wiki/Bengaluru" target='_blank' rel="noreferrer">📍<span className='label'>Bengaluru, India</span></a>
 </nav>
       </div>
