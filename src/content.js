@@ -1,6 +1,6 @@
 // content.js
 const resumeContent  = {
-      professionalSummary: "Versatile Full-Stack Developer skilled in ASP.NET, C#, MS SQL Server and JavaScript, focused on building scalable web application and delivery efficient backend solutions.",
+      professionalSummary: "Backend-focused .NET developer with 2+ years of experience in C#, ASP.NET Core, REST APIs, and MS SQL Server, skilled in building scalable systems and optimizing backend performance, with exposure to frontend technologies.",
       education: [
       {
          course: "B.Tech  - Aligarh Muslim University (2023)",
@@ -11,10 +11,15 @@ const resumeContent  = {
          {
          designation: "Programmer Analyst, Cognizant Technology Solutions   (Dec 2023 – Present)",
          experience: [
-            "Developed applications as a .NET developer using C# and MS-SQL Server",
-            "Managed multiple enterprise level applications (Meeting Concierge, User Services, L1 Wrapper) ,optimizing stored procedures/functions, and delivering cross‑track integration solutions with a single SQL Server database as an L2 Support Engineer.",
-            "Deployed critical requirements(for REST Services) using deployment pipeline within the SDLC.",
-            "Contributed to project success by collaborating with cross-functional teams and adhering to agile methodologies."
+            "Developed and maintained enterprise applications using C#, .NET, and MS SQL Server across multiple modules (Meeting Concierge, User Services, L1 Wrapper)",
+            "Diagnosed and fixed critical issues including email service failures (Exchange Services), API failures, and data inconsistencies in SQL Server.",
+            "Implemented and deployed REST API enhancements (Adaptive Card JSON response) using CI/CD pipelines, supporting downstream integrations (including GenAI use cases).",
+            "Performed SQL optimization and troubleshooting, including stored procedures, jobs monitoring, and resolving data-related defects.",
+            "Integrated external services/APIs and handled API migrations, authentication, and credential management.",
+            "Identified and resolved security vulnerabilities (SAST, DAST, OSS) ensuring compliance with secure coding standards.",
+            "Automated bulk data operations using Python Selenium, reducing manual effort from days to hours.",
+            "Worked on production support (L3), resolving incidents related to application functionality, APIs, database jobs, and server-side issues.",
+            "Collaborated in an Agile team within SDLC, contributing to requirement implementation, debugging, deployment, and documentation."
          ]
          }
       ],
@@ -22,17 +27,19 @@ const resumeContent  = {
          {
             name: "Workshop Management System   (2023)",
             work: [
-               "Designed and implemented role based  application (Admin/Student) using .NET MVC.",
-               "Developed backend solution with C# (BLL, DAL, DLL, WMS), LINQ and MS SQL Server.",
-               "Built as part of initial training at Cognizant, showcasing smart, structured solutions."
+               "Developed a role-based web application (Admin/Student) using ASP.NET MVC, C#, and Entity Framework.",
+               "Designed and integrated multiple layers (BLL, DAL, DLL) into a unified solution using Visual Studio.",
+               "Built features for workshop creation, trainer assignment, and student enrollment/approval workflows.",
+               "Enabled students to subscribe to workshops, access study materials, and manage profiles.",
+               "Implemented dynamic UI and database interactions using LINQ and MS SQL Server."
             ]
          },
          {
             name: "ABU Robocon  (Robotics Competition)   (2019)",
             work: [
-               "Delivered innovative, problem solving  solutions to build robust Rugby 7’s robot mechanisms.",
-               "Integrated PS5 controller input for seamless manual operation and precise robotics control.",
-               "Engineered Arduino Mega programs to control pneumatic actuators, Citron motor drivers, and laser targeting."
+               "Developed control logic and software for Rugby 7’s robotic mechanisms using Arduino (C/C++).",
+               "Implemented controller integration (PS5 input) for real-time command handling and precise system control.",
+               "Programmed and optimized microcontroller-based operations for actuators and motor drivers, ensuring reliable performance."
             ]
          }
       ],
@@ -42,9 +49,11 @@ const resumeContent  = {
          "HTML", "CSS", "JavaScript", "JQuery",
          "Azure Devops", "CI/CD Pipelines",
          "OOPs",
-         "Problem-solving", "Teamwork", "SOLID", "SDLC", "AGILE"
+         "SOLID", "SDLC", "AGILE",
+         "Multi-Tasking", "Communication", "Time Management", "Collaboration"
       ],
       achievements: [
+         "Received appreciation from App Owner and Team for effective issue resolution and timely delivery of critical tasks.",
          "Earned Rank 1 in Diploma in Engineering, showcasing academic excellence.",
          "Secured All‑India Rank 39 in ABU Robocon, highlighting innovation, technical acumen, and problem solving.",
       ]
